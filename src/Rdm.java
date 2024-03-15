@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class RDM {
+public class Rdm {
 
     private List<Turma> listaTurmas = new ArrayList<Turma>();
 

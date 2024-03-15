@@ -4,23 +4,23 @@ public class Pessoa {
     
     private String nome;
     private int id;
-    private RDM rdm;
+    private Rdm rdm;
 
     public Pessoa(String nome, int id) {
         this.nome = nome;
         this.id = id;
-        this.rdm = new RDM();
+        this.rdm = new Rdm();
     }
 
     public String getNome() {
         return nome;
     }
 
-    public RDM getRdm() {
+    public Rdm getRdm() {
         return rdm;
     }
 
-    public void setRdm(RDM rdm) {
+    public void setRdm(Rdm rdm) {
         this.rdm = rdm;
     }
 
