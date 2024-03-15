@@ -1,5 +1,7 @@
+import java.util.List;
+
 public class Main {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		// CRIAÇÃO CONTROLE ACADEMICO !
 
@@ -58,7 +60,12 @@ public class Main {
 				"------------------------------------------------------------------------------------------------------------");
 
 		System.out.println(ca.getAluno("João").toString());
-		System.out.println(ca.getAluno("João").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasJoao = ca.getAluno("João").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasJoao) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); // Obtém o nome da disciplina
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); // Busca a turma pelo nome da disciplina
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
 		System.out.println(ca.getAluno("Josenelle").toString());
 		System.out.println(ca.getAluno("Josenelle").getRdm().mostrarDisciplinas() + "\n");
 		System.out.println(ca.getAluno("Gabriel").toString());
@@ -91,15 +98,5 @@ public class Main {
 		System.out.println(ca.buscaTurmaPeloNome("Calculo 3").mostrarAlunos() + "\n");
 
 
-		System.out.println("\nHorários dos Professores:");
-		for (Professor professor : ca.getListaProfessores()) {
-			System.out.println(professor.getNome() + ": " + professor.mostrarDisciplinasRDM());
-		}
-
-		// Responder à pergunta e: Qual o horário de um aluno?
-		System.out.println("\nHorários dos Alunos:");
-		for (Aluno aluno : ca.getListaAlunos()) {
-			System.out.println(aluno.getNome() + ": " + aluno.mostrarDisciplinasRDM());
 		}
 	}
-}
