@@ -46,15 +46,44 @@ public class Main {
 		ca.cadastrarAlunosNaDisciplina("Henrique", "Calculo 3");
 
 		System.out.println(ca.getProfessor("Fabio").toString());
-		System.out.println(ca.getProfessor("Fabio").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasFabio = ca.getProfessor("Fabio").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasFabio) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getProfessor("Sabrina").toString());
-		System.out.println(ca.getProfessor("Sabrina").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasSabrina = ca.getProfessor("Sabrina").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasSabrina) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getProfessor("Janderson").toString());
-		System.out.println(ca.getProfessor("Janderson").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasJanderson= ca.getProfessor("Janderson").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasJanderson) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getProfessor("Luciana").toString());
-		System.out.println(ca.getProfessor("Luciana").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasLuciana= ca.getProfessor("Luciana").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasLuciana) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getProfessor("Maxuel").toString());
-		System.out.println(ca.getProfessor("Maxuel").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasMaxuel= ca.getProfessor("Maxuel").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasMaxuel) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
 
 		System.out.println(
 				"------------------------------------------------------------------------------------------------------------");
@@ -62,20 +91,50 @@ public class Main {
 		System.out.println(ca.getAluno("João").toString());
 		List<Turma> disciplinasJoao = ca.getAluno("João").getRdm().mostrarDisciplinas();
 		for (Turma disciplina : disciplinasJoao) {
-			String nomeDisciplina = disciplina.getDisciplina().getNome(); // Obtém o nome da disciplina
-			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); // Busca a turma pelo nome da disciplina
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
 			System.out.println(turmaEncontrada.getDisciplina().toString());
 		}
+
 		System.out.println(ca.getAluno("Josenelle").toString());
-		System.out.println(ca.getAluno("Josenelle").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasJose= ca.getAluno("Josenelle").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasJose) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getAluno("Gabriel").toString());
-		System.out.println(ca.getAluno("Gabriel").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasGabriel= ca.getAluno("Gabriel").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasGabriel) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getAluno("Evan").toString());
-		System.out.println(ca.getAluno("Evan").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasEvan= ca.getAluno("Evan").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasEvan) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getAluno("Pedro").toString());
-		System.out.println(ca.getAluno("Pedro").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasPedro= ca.getAluno("Pedro").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasPedro) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
+
 		System.out.println(ca.getAluno("Henrique").toString());
-		System.out.println(ca.getAluno("Henrique").getRdm().mostrarDisciplinas() + "\n");
+		List<Turma> disciplinasHenrique= ca.getAluno("Henrique").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasHenrique) {
+			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
+			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
+			System.out.println(turmaEncontrada.getDisciplina().toString());
+		}
 
 		System.out.println(
 				"------------------------------------------------------------------------------------------------------------");
