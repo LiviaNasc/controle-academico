@@ -1,38 +1,57 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Turma {
-    private String codigo;
-    private Disciplina disciplina;
+
     private Professor professor;
-    private List<AlunoTurma> alunosTurma;
+    private List<Aluno> alunosDisciplina = new ArrayList<Aluno>();
+    private Disciplina disciplina;
 
-    public Turma(String codigo, Disciplina disciplina, Professor professor) {
-        this.codigo = codigo;
-        this.disciplina = disciplina;
-        this.professor = professor;
-        this.alunosTurma = new ArrayList<>();
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public Turma(String nome, String dia, String hora) {
+        this.disciplina = new Disciplina(nome, dia, hora);
     }
 
     public Professor getProfessor() {
         return professor;
     }
 
-    public List<AlunoTurma> getAlunosTurma() {
-        return alunosTurma;
+    public Disciplina getDisciplina() {
+        return disciplina;
     }
 
-    public void adicionarAlunoTurma(AlunoTurma alunoTurma) {
-        alunosTurma.add(alunoTurma);
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 
-    // Outros métodos conforme necessário
+    public List<Aluno> getAlunosDisciplina() {
+        return alunosDisciplina;
+    }
+
+    public void setAlunosDisciplina(List<Aluno> alunosDisciplina) {
+        this.alunosDisciplina = alunosDisciplina;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public List<Aluno> mostrarAlunos() {
+        System.out.println("Lista de alunos da Turma: ");
+        return alunosDisciplina;
+    }
+
+    public int quantidadeAlunos() {
+        return alunosDisciplina.size();
+    }
+
+    public boolean adicionarAlunoNaLista(Aluno a) {
+        return alunosDisciplina.add(a);
+    }
+
+    public String toString(){
+        return "Disciplina: "+ getDisciplina().getNome();
+    }
+
+    
 }

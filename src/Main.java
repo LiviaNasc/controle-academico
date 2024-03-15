@@ -1,59 +1,94 @@
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-
 public class Main {
-    public static void main(String[] args) {
-        ControleAcademico controle = new ControleAcademico();
+	public static void main(String[] args) throws Exception {
 
-        Professor prof1 = new Professor("João");
-        prof1.addDisciplina("Matemática", "Segunda 08:00-10:00");
-        prof1.addDisciplina("Física", "Terça 10:00-12:00");
-        controle.adicionarProfessor(prof1);
+		// CRIAÇÃO CONTROLE ACADEMICO !
 
-        Disciplina matematica = new Disciplina("Matemática");
-        matematica.addAluno("Pedro");
-        matematica.addAluno("Maria");
-        controle.adicionarDisciplina(matematica);
+		ControleAcademico ca = new ControleAcademico();
 
-        Aluno aluno1 = new Aluno("Pedro");
-        aluno1.addDisciplina("Matemática", "Segunda 08:00-10:00");
-        controle.adicionarAluno(aluno1);
+		ca.cadastrarTurma("Metodos Avançados de Programação", "Segunda", "9:00");
+		ca.cadastrarTurma("Banco de Dados", "Segunda", "7:00");
+		ca.cadastrarTurma("Redes", "Terça", "11:00");
+		ca.cadastrarTurma("APS", "Quarta", "7:00");
+		ca.cadastrarTurma("Calculo 3", "Sexta", "7:00");
 
-        // Utilização métodos
-        Set<String> disciplinasProf = controle.disciplinasDoProfessor(prof1);
-        System.out.println("Disciplinas do Professor João: " + disciplinasProf);
+		ca.cadastrarProfessores("Sabrina", "123");
+		ca.cadastrarProfessores("Fabio", "456");
+        ca.cadastrarProfessores("Janderson", "789");
+		ca.cadastrarProfessores("Luciana", "1011");
+		ca.cadastrarProfessores("Maxuel", "1314");
 
-        String horarioMatematicaProf = controle.horarioDoProfessor(prof1, "Matemática");
-        System.out.println("Horário da disciplina Matemática do Professor João: " + horarioMatematicaProf);
+		ca.adicionarAlunos("João", "111", "Computação");
+		ca.adicionarAlunos("Josenelle", "222", "Computação");
+		ca.adicionarAlunos("Gabriel", "333", "Computação");
+		ca.adicionarAlunos("Evan", "444", "Química");
+		ca.adicionarAlunos("Pedro", "555", "Matemática");
+		ca.adicionarAlunos("Henrique", "666", "Física");
 
-        List<String> alunosMatematica = controle.alunosDaDisciplina(matematica);
-        System.out.println("Alunos da disciplina Matemática: " + alunosMatematica);
+		ca.definirProfessorNaDisciplina("Sabrina", "Banco de Dados");
+		ca.definirProfessorNaDisciplina("Sabrina", "Metodos Avançados de Programação");
+		ca.definirProfessorNaDisciplina("Fabio", "Redes");
+		ca.definirProfessorNaDisciplina("Janderson", "APS");
+		ca.definirProfessorNaDisciplina("Maxuel", "Calculo 3");
 
-        Set<String> disciplinasAluno = controle.disciplinasDoAluno(aluno1);
-        System.out.printf("Disciplinas do Aluno %s: %s\n", aluno1.getNome(), disciplinasAluno);
+		ca.cadastrarAlunosNaDisciplina("João", "Banco de Dados");
+		ca.cadastrarAlunosNaDisciplina("João", "Metodos Avançados de Programação");
+		ca.cadastrarAlunosNaDisciplina("João", "APS");
+		ca.cadastrarAlunosNaDisciplina("João", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("Josenelle", "Banco de Dados");
+		ca.cadastrarAlunosNaDisciplina("Josenelle", "APS");
+		ca.cadastrarAlunosNaDisciplina("Josenelle", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("Gabriel", "Redes");
+		ca.cadastrarAlunosNaDisciplina("Gabriel", "Metodos Avançados de Programação");
+		ca.cadastrarAlunosNaDisciplina("Evan", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("Pedro", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("Henrique", "Calculo 3");
 
-        String horarioMatematicaAluno = controle.horarioDoAluno(aluno1, "Matemática");
-        System.out.println("Horário da disciplina Matemática do Aluno Pedro: " + horarioMatematicaAluno);
+		System.out.println(ca.getProfessor("Fabio").toString());
+		System.out.println(ca.getProfessor("Fabio").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getProfessor("Sabrina").toString());
+		System.out.println(ca.getProfessor("Sabrina").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getProfessor("Janderson").toString());
+		System.out.println(ca.getProfessor("Janderson").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getProfessor("Luciana").toString());
+		System.out.println(ca.getProfessor("Luciana").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getProfessor("Maxuel").toString());
+		System.out.println(ca.getProfessor("Maxuel").getRdm().mostrarDisciplinas() + "\n");
 
-        int numeroAlunosMatematica = controle.numeroDeAlunosNaDisciplina(matematica);
-        System.out.println("Número de alunos na disciplina Matemática: " + numeroAlunosMatematica);
+		System.out.println(
+				"------------------------------------------------------------------------------------------------------------");
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("a. Quais disciplinas um professor está ministrando;\n" +
-                            "b. Qual o horário de um professor;\n" +
-                            "c. Quais os alunos de uma dada disciplina;\n" +
-                            "d. Quais as disciplinas de um aluno;\n" +
-                            "e. Qual o horário de um aluno;\n" +
-                            "f. Qual o número de alunos de uma disciplina.");
-        String letra = input.next();
-        switch(letra){
-            case "a":
-                System.out.println("Qual professor? ");
-                String professor = input.next();
-                break;
-        }
+		System.out.println(ca.getAluno("João").toString());
+		System.out.println(ca.getAluno("João").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getAluno("Josenelle").toString());
+		System.out.println(ca.getAluno("Josenelle").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getAluno("Gabriel").toString());
+		System.out.println(ca.getAluno("Gabriel").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getAluno("Evan").toString());
+		System.out.println(ca.getAluno("Evan").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getAluno("Pedro").toString());
+		System.out.println(ca.getAluno("Pedro").getRdm().mostrarDisciplinas() + "\n");
+		System.out.println(ca.getAluno("Henrique").toString());
+		System.out.println(ca.getAluno("Henrique").getRdm().mostrarDisciplinas() + "\n");
 
+		System.out.println(
+				"------------------------------------------------------------------------------------------------------------");
 
-    }
+		System.out.println(ca.buscaTurmaPeloNome("Metodos Avançados de Programação").toString());
+		System.out.println("Quantidade de Alunos: "
+				+ ca.buscaTurmaPeloNome("Metodos Avançados de Programação").quantidadeAlunos());
+		System.out.println(ca.buscaTurmaPeloNome("Metodos Avançados de Programação").mostrarAlunos() + "\n");
+		System.out.println(ca.buscaTurmaPeloNome("Banco de Dados").toString());
+		System.out.println("Quantidade de Alunos: " + ca.buscaTurmaPeloNome("Banco de Dados").quantidadeAlunos());
+		System.out.println(ca.buscaTurmaPeloNome("Banco de Dados").mostrarAlunos() + "\n");
+		System.out.println(ca.buscaTurmaPeloNome("Redes").toString());
+		System.out.println("Quantidade de Alunos: " + ca.buscaTurmaPeloNome("Redes").quantidadeAlunos());
+		System.out.println(ca.buscaTurmaPeloNome("Redes").mostrarAlunos() + "\n");
+		System.out.println(ca.buscaTurmaPeloNome("APS").toString());
+		System.out.println("Quantidade de Alunos: " + ca.buscaTurmaPeloNome("APS").quantidadeAlunos());
+		System.out.println(ca.buscaTurmaPeloNome("APS").mostrarAlunos() + "\n");
+		System.out.println(ca.buscaTurmaPeloNome("Calculo 3").toString());
+		System.out.println("Quantidade de Alunos: " + ca.buscaTurmaPeloNome("Calculo 3").quantidadeAlunos());
+		System.out.println(ca.buscaTurmaPeloNome("Calculo 3").mostrarAlunos() + "\n");
+
+	}
 }
