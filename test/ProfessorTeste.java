@@ -31,7 +31,7 @@ public class ProfessorTeste {
         ca.definirProfessorNaDisciplina("Sabrina", "Banco de Dados");
         ca.definirProfessorNaDisciplina("Sabrina", "Metodos Avançados de Programação");
         ca.definirProfessorNaDisciplina("Fabio", "Redes");
-        ca.definirProfessorNaDisciplina("Janderson", "APS");
+        ca.definirProfessorNaDisciplina("Sabrina", "APS");
         ca.definirProfessorNaDisciplina("Maxuel", "Calculo 3");
     }
 
@@ -45,9 +45,9 @@ public class ProfessorTeste {
     }
     @Test
     public void testNumDisciplinas(){
-        assertEquals(2, ca.getProfessor("Sabrina").getRdm().getListaTurmas().size());
-        assertTrue(ca.definirProfessorNaDisciplina("Sabrina", "Calculo 1"));
         assertEquals(3, ca.getProfessor("Sabrina").getRdm().getListaTurmas().size());
+        assertTrue(ca.definirProfessorNaDisciplina("Sabrina", "Calculo 1"));
+        assertEquals(4, ca.getProfessor("Sabrina").getRdm().getListaTurmas().size());
     }
 
     @Test

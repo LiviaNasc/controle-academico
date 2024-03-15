@@ -18,24 +18,24 @@ public class AlunoTeste {
         ca.cadastrarTurma("Calculo 3", "Sexta", "7:00");
         ca.cadastrarTurma("Redes", "Terça", "11:00");
 
-        ca.adicionarAlunos("João", 111, "Computação");
-        ca.adicionarAlunos("Josenelle", 222, "Computação");
-        ca.adicionarAlunos("Gabriel", 333, "Computação");
-        ca.adicionarAlunos("Evan", 444, "Química");
+        ca.adicionarAlunos("Lívia", 111, "Computação");
+        ca.adicionarAlunos("John", 222, "Computação");
+        ca.adicionarAlunos("Madu", 333, "Computação");
+        ca.adicionarAlunos("Fulano", 444, "Química");
         ca.adicionarAlunos("Pedro", 555, "Matemática");
         ca.adicionarAlunos("Henrique", 666, "Física");
-        ca.adicionarAlunos("Igor", 777, "Filosofia");
+        ca.adicionarAlunos("João", 777, "Filosofia");
 
-        ca.cadastrarAlunosNaDisciplina("João", "Banco de Dados");
-        ca.cadastrarAlunosNaDisciplina("João", "Metodos Avançados de Programação");
-        ca.cadastrarAlunosNaDisciplina("João", "APS");
-        ca.cadastrarAlunosNaDisciplina("João", "Calculo 3");
-        ca.cadastrarAlunosNaDisciplina("Josenelle", "Banco de Dados");
-        ca.cadastrarAlunosNaDisciplina("Josenelle", "APS");
-        ca.cadastrarAlunosNaDisciplina("Josenelle", "Calculo 3");
-        ca.cadastrarAlunosNaDisciplina("Gabriel", "Redes");
-        ca.cadastrarAlunosNaDisciplina("Gabriel", "Metodos Avançados de Programação");
-        ca.cadastrarAlunosNaDisciplina("Evan", "Calculo 3");
+        ca.cadastrarAlunosNaDisciplina("Lívia", "Banco de Dados");
+        ca.cadastrarAlunosNaDisciplina("Lívia", "Metodos Avançados de Programação");
+        ca.cadastrarAlunosNaDisciplina("Lívia", "APS");
+        ca.cadastrarAlunosNaDisciplina("Lívia", "Calculo 3");
+        ca.cadastrarAlunosNaDisciplina("John", "Banco de Dados");
+        ca.cadastrarAlunosNaDisciplina("John", "APS");
+        ca.cadastrarAlunosNaDisciplina("John", "Calculo 3");
+        ca.cadastrarAlunosNaDisciplina("Madu", "Redes");
+        ca.cadastrarAlunosNaDisciplina("Madu", "Metodos Avançados de Programação");
+        ca.cadastrarAlunosNaDisciplina("Fulano", "Calculo 3");
         ca.cadastrarAlunosNaDisciplina("Pedro", "Calculo 3");
         ca.cadastrarAlunosNaDisciplina("Henrique", "Calculo 3");
 
@@ -44,26 +44,26 @@ public class AlunoTeste {
     @Test
     public void testeAlunoAddDisciplina(){
 
-        assertTrue(ca.cadastrarAlunosNaDisciplina("João", "Redes"));
-        assertFalse(ca.cadastrarAlunosNaDisciplina("João", "Redes"));// false quando tento colocar de novo!
-        assertFalse(ca.cadastrarAlunosNaDisciplina("João", "APS")); // false quando tento colocar de novo!
+        assertTrue(ca.cadastrarAlunosNaDisciplina("Lívia", "Redes"));
+        assertFalse(ca.cadastrarAlunosNaDisciplina("Lívia", "Redes"));// false quando tento colocar de novo!
+        assertFalse(ca.cadastrarAlunosNaDisciplina("Lívia", "APS")); // false quando tento colocar de novo!
 
     }
     @Test
     public void testNumDisciplinas(){
-        assertEquals(4, ca.getAluno("João").getRdm().getListaTurmas().size());
-        assertTrue(ca.cadastrarAlunosNaDisciplina("João", "Redes"));
-        assertEquals(5, ca.getAluno("João").getRdm().getListaTurmas().size());
+        assertEquals(4, ca.getAluno("Lívia").getRdm().getListaTurmas().size());
+        assertTrue(ca.cadastrarAlunosNaDisciplina("Lívia", "Redes"));
+        assertEquals(5, ca.getAluno("Lívia").getRdm().getListaTurmas().size());
     }
 
     @Test
     public void testAlunoDados(){
 
-        Aluno alunoTeste = new Aluno("João", 111, "Computação");
-        assertEquals(alunoTeste.getCurso(), ca.getAluno("João").getCurso());
-        assertEquals(alunoTeste.getId(), ca.getAluno("João").getId());
-        assertEquals(alunoTeste.getNome(), ca.getAluno("João").getNome());
-        assertEquals(alunoTeste.getRdm().getClass(), ca.getAluno("João").getRdm().getClass());
+        Aluno alunoTeste = new Aluno("Lívia", 111, "Computação");
+        assertEquals(alunoTeste.getCurso(), ca.getAluno("Lívia").getCurso());
+        assertEquals(alunoTeste.getId(), ca.getAluno("Lívia").getId());
+        assertEquals(alunoTeste.getNome(), ca.getAluno("Lívia").getNome());
+        assertEquals(alunoTeste.getRdm().getClass(), ca.getAluno("Lívia").getRdm().getClass());
     }
 
     @Test
@@ -74,27 +74,25 @@ public class AlunoTeste {
         ca.cadastrarAlunosNaDisciplina("Aluno Teste", "Metodos Avançados de Programação");
         ca.cadastrarAlunosNaDisciplina("Aluno Teste", "APS");
         ca.cadastrarAlunosNaDisciplina("Aluno Teste", "Calculo 3");
-        assertEquals(ca.getAluno("Aluno Teste").getRdm().getListaTurmas(), ca.getAluno("João").getRdm().getListaTurmas());
+        assertEquals(ca.getAluno("Aluno Teste").getRdm().getListaTurmas(), ca.getAluno("Lívia").getRdm().getListaTurmas());
 
     }
 
     @Test
     public void testeAlunosDiferentes(){
-        assertNotEquals(ca.getAluno("Pedro"), ca.getAluno("João"));
+        assertNotEquals(ca.getAluno("Pedro"), ca.getAluno("Lívia"));
     }
 
     @Test
     public void alunosListaVazia(){
-        assertNull(ca.getAluno("Igor").getRdm().mostrarDisciplinas());
+        assertNull(ca.getAluno("João").getRdm().mostrarDisciplinas());
     }
 
     @Test
     public void contaisAll(){
-        assertFalse(ca.getAluno("João").getRdm().mostrarDisciplinas().containsAll(ca.getListaTurmas()));
-        ca.cadastrarAlunosNaDisciplina("João", "Redes");
-        assertTrue(ca.getAluno("João").getRdm().mostrarDisciplinas().containsAll(ca.getListaTurmas()));
+        assertFalse(ca.getAluno("Lívia").getRdm().mostrarDisciplinas().containsAll(ca.getListaTurmas()));
+        ca.cadastrarAlunosNaDisciplina("Lívia", "Redes");
+        assertTrue(ca.getAluno("Lívia").getRdm().mostrarDisciplinas().containsAll(ca.getListaTurmas()));
     }
-
-
 
 }
