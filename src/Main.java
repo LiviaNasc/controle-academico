@@ -12,6 +12,8 @@ public class Main {
 		ca.cadastrarTurma("Redes", "Terça", "11:00");
 		ca.cadastrarTurma("APS", "Quarta", "7:00");
 		ca.cadastrarTurma("Calculo 3", "Sexta", "7:00");
+		ca.cadastrarTurma("Interface", "Sábado", "7:00");
+
 
 		ca.cadastrarProfessores("Sabrina", 123);
 		ca.cadastrarProfessores("Fabio", 456);
@@ -19,10 +21,11 @@ public class Main {
 		ca.cadastrarProfessores("Luciana", 1011);
 		ca.cadastrarProfessores("Maxuel", 1314);
 
-		ca.adicionarAlunos("João", 111, "Computação");
-		ca.adicionarAlunos("Josenelle", 222, "Computação");
-		ca.adicionarAlunos("Gabriel", 333, "Computação");
-		ca.adicionarAlunos("Evan", 444, "Química");
+
+		ca.adicionarAlunos("Livia", 111, "Computação");
+		ca.adicionarAlunos("John", 222, "Computação");
+		ca.adicionarAlunos("Madu", 333, "Computação");
+		ca.adicionarAlunos("Fulano", 444, "Química");
 		ca.adicionarAlunos("Pedro", 555, "Matemática");
 		ca.adicionarAlunos("Henrique", 666, "Física");
 
@@ -31,17 +34,18 @@ public class Main {
 		ca.definirProfessorNaDisciplina("Fabio", "Redes");
 		ca.definirProfessorNaDisciplina("Janderson", "APS");
 		ca.definirProfessorNaDisciplina("Maxuel", "Calculo 3");
+		ca.definirProfessorNaDisciplina("Luciana", "Interface");
 
-		ca.cadastrarAlunosNaDisciplina("João", "Banco de Dados");
-		ca.cadastrarAlunosNaDisciplina("João", "Metodos Avançados de Programação");
-		ca.cadastrarAlunosNaDisciplina("João", "APS");
-		ca.cadastrarAlunosNaDisciplina("João", "Calculo 3");
-		ca.cadastrarAlunosNaDisciplina("Josenelle", "Banco de Dados");
-		ca.cadastrarAlunosNaDisciplina("Josenelle", "APS");
-		ca.cadastrarAlunosNaDisciplina("Josenelle", "Calculo 3");
-		ca.cadastrarAlunosNaDisciplina("Gabriel", "Redes");
-		ca.cadastrarAlunosNaDisciplina("Gabriel", "Metodos Avançados de Programação");
-		ca.cadastrarAlunosNaDisciplina("Evan", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("Livia", "Banco de Dados");
+		ca.cadastrarAlunosNaDisciplina("Livia", "Metodos Avançados de Programação");
+		ca.cadastrarAlunosNaDisciplina("Livia", "APS");
+		ca.cadastrarAlunosNaDisciplina("Livia", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("John", "Banco de Dados");
+		ca.cadastrarAlunosNaDisciplina("John", "APS");
+		ca.cadastrarAlunosNaDisciplina("John", "Calculo 3");
+		ca.cadastrarAlunosNaDisciplina("Madu", "Redes");
+		ca.cadastrarAlunosNaDisciplina("Madu", "Metodos Avançados de Programação");
+		ca.cadastrarAlunosNaDisciplina("Fulano", "Calculo 3");
 		ca.cadastrarAlunosNaDisciplina("Pedro", "Calculo 3");
 		ca.cadastrarAlunosNaDisciplina("Henrique", "Calculo 3");
 
@@ -88,33 +92,33 @@ public class Main {
 		System.out.println(
 				"------------------------------------------------------------------------------------------------------------");
 
-		System.out.println(ca.getAluno("João").toString());
-		List<Turma> disciplinasJoao = ca.getAluno("João").getRdm().mostrarDisciplinas();
-		for (Turma disciplina : disciplinasJoao) {
+		System.out.println(ca.getAluno("Livia").toString());
+		List<Turma> disciplinasLivia = ca.getAluno("Livia").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasLivia) {
 			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
 			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
 			System.out.println(turmaEncontrada.getDisciplina().toString());
 		}
 
-		System.out.println(ca.getAluno("Josenelle").toString());
-		List<Turma> disciplinasJose= ca.getAluno("Josenelle").getRdm().mostrarDisciplinas();
-		for (Turma disciplina : disciplinasJose) {
+		System.out.println(ca.getAluno("John").toString());
+		List<Turma> disciplinasJohn= ca.getAluno("John").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasJohn) {
 			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
 			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
 			System.out.println(turmaEncontrada.getDisciplina().toString());
 		}
 
-		System.out.println(ca.getAluno("Gabriel").toString());
-		List<Turma> disciplinasGabriel= ca.getAluno("Gabriel").getRdm().mostrarDisciplinas();
-		for (Turma disciplina : disciplinasGabriel) {
+		System.out.println(ca.getAluno("Madu").toString());
+		List<Turma> disciplinasMadu= ca.getAluno("Madu").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasMadu) {
 			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
 			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
 			System.out.println(turmaEncontrada.getDisciplina().toString());
 		}
 
-		System.out.println(ca.getAluno("Evan").toString());
-		List<Turma> disciplinasEvan= ca.getAluno("Evan").getRdm().mostrarDisciplinas();
-		for (Turma disciplina : disciplinasEvan) {
+		System.out.println(ca.getAluno("Fulano").toString());
+		List<Turma> disciplinasFulano= ca.getAluno("Fulano").getRdm().mostrarDisciplinas();
+		for (Turma disciplina : disciplinasFulano) {
 			String nomeDisciplina = disciplina.getDisciplina().getNome(); 
 			Turma turmaEncontrada = ca.buscaTurmaPeloNome(nomeDisciplina); 
 			System.out.println(turmaEncontrada.getDisciplina().toString());
