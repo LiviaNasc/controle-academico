@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rdm {
+public class RDM {
 
     private List<Turma> listaTurmas = new ArrayList<Turma>();
 
@@ -18,7 +18,7 @@ public class Rdm {
         if (listaTurmas.contains(turma)) {
             return false;
         }
-        listaTurmas.add(turma);
+        listaTurmas.add(turma); // DISCIPLINA ADICIONADA!
         return true;
     }
 

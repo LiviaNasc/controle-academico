@@ -6,7 +6,6 @@ public class ControleAcademico {
     private List<Aluno> listaAlunos;
     private List<Professor> professoresCadastrados;
     private List<Turma> listaTurmas;
-    private Rdm rdm;
     
     public ControleAcademico() {
         listaTurmas = new ArrayList<>();
@@ -60,7 +59,7 @@ public class ControleAcademico {
 
     }
 
-    public boolean cadastrarProfessores(String nome, String id) {
+    public boolean cadastrarProfessores(String nome, int id) {
         Professor professor = new Professor(nome, id);
 
         if (professoresCadastrados.contains(professor)) {
@@ -70,7 +69,7 @@ public class ControleAcademico {
         return true;
     }
 
-    public boolean adicionarAlunos(String nome, String matricula, String curso) {
+    public boolean adicionarAlunos(String nome, int matricula, String curso) {
         Aluno aluno = new Aluno(nome, matricula, curso);
 
         if (listaAlunos.contains(aluno)) {
@@ -85,7 +84,7 @@ public class ControleAcademico {
         Turma turma = buscaTurmaPeloNome(nomeDisciplina);
         for (Aluno alunofor : listaAlunos) {
             if (alunofor.getNome().equals(nomeAluno)) {
-                if(rdm.adicionarDisciplinaRDM(turma)){
+                if(alunofor.adicionarDisciplina(turma)){
                     if(turma.adicionarAlunoNaLista(alunofor)){
                         return true;
 
@@ -117,7 +116,7 @@ public class ControleAcademico {
             }
             for (Professor professor : professoresCadastrados) {
                 if (professor.getNome().equals(nomeProfessor)) {
-                    if(rdm.adicionarDisciplinaRDM(disciplina)){
+                    if(professor.adicionarDisciplina(disciplina)){
                         return true;
                     }
                 }

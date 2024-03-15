@@ -1,5 +1,5 @@
 public class Main {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args){
 
 		// CRIAÇÃO CONTROLE ACADEMICO !
 
@@ -11,18 +11,18 @@ public class Main {
 		ca.cadastrarTurma("APS", "Quarta", "7:00");
 		ca.cadastrarTurma("Calculo 3", "Sexta", "7:00");
 
-		ca.cadastrarProfessores("Sabrina", "123");
-		ca.cadastrarProfessores("Fabio", "456");
-        ca.cadastrarProfessores("Janderson", "789");
-		ca.cadastrarProfessores("Luciana", "1011");
-		ca.cadastrarProfessores("Maxuel", "1314");
+		ca.cadastrarProfessores("Sabrina", 123);
+		ca.cadastrarProfessores("Fabio", 456);
+		ca.cadastrarProfessores("Janderson", 789);
+		ca.cadastrarProfessores("Luciana", 1011);
+		ca.cadastrarProfessores("Maxuel", 1314);
 
-		ca.adicionarAlunos("João", "111", "Computação");
-		ca.adicionarAlunos("Josenelle", "222", "Computação");
-		ca.adicionarAlunos("Gabriel", "333", "Computação");
-		ca.adicionarAlunos("Evan", "444", "Química");
-		ca.adicionarAlunos("Pedro", "555", "Matemática");
-		ca.adicionarAlunos("Henrique", "666", "Física");
+		ca.adicionarAlunos("João", 111, "Computação");
+		ca.adicionarAlunos("Josenelle", 222, "Computação");
+		ca.adicionarAlunos("Gabriel", 333, "Computação");
+		ca.adicionarAlunos("Evan", 444, "Química");
+		ca.adicionarAlunos("Pedro", 555, "Matemática");
+		ca.adicionarAlunos("Henrique", 666, "Física");
 
 		ca.definirProfessorNaDisciplina("Sabrina", "Banco de Dados");
 		ca.definirProfessorNaDisciplina("Sabrina", "Metodos Avançados de Programação");

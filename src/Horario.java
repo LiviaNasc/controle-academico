@@ -26,7 +26,6 @@ public class Horario {
         this.horarioE = horarioE;
     }
 
-    @Override
     public String toString() {
         return "Dia: " + dia + " ||Horario: " + horarioE ;
     }
