@@ -90,5 +90,16 @@ public class Main {
 		System.out.println("Quantidade de Alunos: " + ca.buscaTurmaPeloNome("Calculo 3").quantidadeAlunos());
 		System.out.println(ca.buscaTurmaPeloNome("Calculo 3").mostrarAlunos() + "\n");
 
+
+		System.out.println("\nHorários dos Professores:");
+		for (Professor professor : ca.getListaProfessores()) {
+			System.out.println(professor.getNome() + ": " + professor.mostrarDisciplinasRDM());
+		}
+
+		// Responder à pergunta e: Qual o horário de um aluno?
+		System.out.println("\nHorários dos Alunos:");
+		for (Aluno aluno : ca.getListaAlunos()) {
+			System.out.println(aluno.getNome() + ": " + aluno.mostrarDisciplinasRDM());
+		}
 	}
 }

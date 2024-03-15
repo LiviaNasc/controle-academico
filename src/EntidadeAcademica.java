@@ -1,12 +1,12 @@
 import java.util.List;
 
-public class Pessoa {
-    
+public class EntidadeAcademica {
+
     private String nome;
     private int id;
     private Rdm rdm;
 
-    public Pessoa(String nome, int id) {
+    public EntidadeAcademica(String nome, int id) {
         this.nome = nome;
         this.id = id;
         this.rdm = new Rdm();

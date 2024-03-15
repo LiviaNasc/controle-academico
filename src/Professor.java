@@ -1,4 +1,4 @@
-public class Professor extends Pessoa{
+public class Professor extends EntidadeAcademica {
 
 
     public Professor(String nome, int id) {
