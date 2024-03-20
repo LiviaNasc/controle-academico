@@ -45,8 +45,8 @@ public class AlunoTeste {
     public void testeAlunoAddDisciplina(){
 
         assertTrue(ca.cadastrarAlunosNaDisciplina("Lívia", "Redes"));
-        assertFalse(ca.cadastrarAlunosNaDisciplina("Lívia", "Redes"));// false quando tento colocar de novo!
-        assertFalse(ca.cadastrarAlunosNaDisciplina("Lívia", "APS")); // false quando tento colocar de novo!
+        assertFalse(ca.cadastrarAlunosNaDisciplina("Lívia", "Redes"));
+        assertFalse(ca.cadastrarAlunosNaDisciplina("Lívia", "APS"));
 
     }
     @Test

@@ -18,17 +18,15 @@ public class Rdm {
         if (listaTurmas.contains(turma)) {
             return false;
         }
-        listaTurmas.add(turma); // DISCIPLINA ADICIONADA!
+        listaTurmas.add(turma);
         return true;
     }
 
     public List<Turma> mostrarDisciplinas() {
-        System.out.println("Lista de Disciplinas: ");
         if (listaTurmas.isEmpty()) {
             return null;
         }
         return getListaTurmas();
-
     }
 
 }

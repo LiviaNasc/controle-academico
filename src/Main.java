@@ -3,8 +3,6 @@ import java.util.List;
 public class Main {
 	public static void main(String[] args) {
 
-		// CRIAÇÃO CONTROLE ACADEMICO !
-
 		ControleAcademico ca = new ControleAcademico();
 
 		ca.cadastrarTurma("Metodos Avançados de Programação", "Segunda", "9:00");

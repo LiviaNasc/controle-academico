@@ -1,13 +1,13 @@
 public class Horario {
     private String dia;
-    private String horarioE;
+    private String horario;
 
     public Horario(){
 
     }
-    public Horario(String dia, String horarioE) {
+    public Horario(String dia, String horario) {
         this.dia = dia;
-        this.horarioE = horarioE;
+        this.horario = horario;
     }
 
     public String getDia() {
@@ -18,16 +18,16 @@ public class Horario {
         this.dia = dia;
     }
 
-    public String getHorarioE() {
-        return horarioE;
+    public String getHorario() {
+        return horario;
     }
 
-    public void setHorarioE(String horarioE) {
-        this.horarioE = horarioE;
+    public void setHorarioE(String horario) {
+        this.horario = horario;
     }
 
     public String toString() {
-        return "Dia: " + dia + " ||Horario: " + horarioE ;
+        return "Dia: " + dia + " ||Horario: " + horario ;
     }
 
 }

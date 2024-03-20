@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControleAcademico {
-    //TODO: SIM
     private List<Aluno> listaAlunos;
     private List<Professor> professoresCadastrados;
     private List<Turma> listaTurmas;

@@ -36,7 +36,6 @@ public class Turma {
     }
 
     public List<Aluno> mostrarAlunos() {
-        System.out.println("Lista de alunos da Turma: ");
         return alunosDisciplina;
     }
 
