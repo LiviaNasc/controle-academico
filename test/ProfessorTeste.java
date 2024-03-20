@@ -39,8 +39,8 @@ public class ProfessorTeste {
     public void testeAlunoAddDisciplina(){
 
         assertTrue(ca.definirProfessorNaDisciplina("Sabrina", "Calculo 1"));
-        assertFalse(ca.definirProfessorNaDisciplina("Sabrina", "Calculo 1"));// false quando tento colocar de novo!
-        assertFalse(ca.cadastrarAlunosNaDisciplina("Sabrina", "Banco de Dados")); // false quando tento colocar de novo!
+        assertFalse(ca.definirProfessorNaDisciplina("Sabrina", "Calculo 1"));
+        assertFalse(ca.cadastrarAlunosNaDisciplina("Sabrina", "Banco de Dados"));
 
     }
     @Test
